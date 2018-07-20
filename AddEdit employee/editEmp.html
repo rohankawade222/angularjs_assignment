@@ -1,0 +1,18 @@
+<body>
+    <div>
+      
+    <form name="empForm" novalidate >
+  
+            Name : <input type="text" name="name" placeholder="Name" ng-model="employee.name" required maxlength="4" />
+            <span ng-show="empForm.name.$touched && empForm.name.$error.required" style="color: red">Name is Required</span><br /><br />
+            Phone : <input type="text" name="phone" placeholder="Phone Number" ng-model="employee.phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57' required maxlength="10"/><span ng-show="empForm.phone.$touched && empForm.phone.$error.required" style="color: red">Name is Required</span><br /><br />
+            City : <input type="text" placeholder="City" ng-model="employee.address.city" required/><br /><br />
+            Address 1 : <input type="text" placeholder="Address 1" ng-model="employee.address.address_line1" /><br /><br />
+            Address 2 : <input type="text" placeholder="Address 2" ng-model="employee.address.address_line2" /><br /><br />
+            Postal code: <input type="text" placeholder="postal code" ng-model="employee.address.postal_code"/><br /><br />
+            <input type="submit" ng-disabled="empForm.$invalid"  ng-click="save(employee,form)" value="Submit" />
+    </form>
+  
+    </div>
+  </body>
+  

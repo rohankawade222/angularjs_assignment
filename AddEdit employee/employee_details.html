@@ -1,0 +1,34 @@
+
+<body ng-app="myApp">
+  <div>
+    <button ng-click = "addNewEmployee()">ADD NEW</button>
+    <br />
+    <br />
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>City</th>
+          <th>Address 1</th>
+          <th>Address 2</th>
+          <th>Postal Code</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in employeeDetails.data track by $index">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ validateMobileNumber(employee.phone) }}</td>
+          <td>{{ employee.address.city }}</td>
+          <td>{{ employee.address.address_line1 }}</td>
+          <td>{{ employee.address.address_line2 }}</td>
+          <td>{{ employee.address.postal_code }}</td>
+          <td><button ng-click="editEmployee(employee.id,$index)">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
